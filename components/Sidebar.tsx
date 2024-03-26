@@ -5,6 +5,7 @@ import React, { useMemo } from "react";
 import { BiSearch } from "react-icons/bi";
 import { HiHome } from "react-icons/hi";
 
+import Library from './Library';
 import Box from "./Box";
 import SidebarItem from "./SidebarItem";
 
@@ -38,13 +39,22 @@ export default function Sidebar({ children }: Props) {
 				<Box>
 					<div className="flex flex-col gap-y-4 px-5 py-4">
 						{routes.map((item) => {
-							<SidebarItem key={item.label} {...item} />;
+							return <SidebarItem 
+							key={item.label} {...item} 
+							/>;
 						})}
 					</div>
+					
 				</Box>
 
-				<Box className="overflow-y-auto h-full">songs lib</Box>
+				<Box className="overflow-y-auto h-full">
+					<Library />
+				</Box>
 			</div>
+
+			<main
+			className="h-full flex-1 overflow-y-auto py-2"
+			>{children}</main>
 		</div>
 	);
 }
