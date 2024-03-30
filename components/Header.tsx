@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({
   children,
   className,
 }) => {
-  const player = usePlayer();
+  // const player = usePlayer();
   const router = useRouter();
   const authModal = useAuthModal();
 
