@@ -7,10 +7,15 @@ import { TbPlaylist } from 'react-icons/tb'
 import useUploadModal from "@/hooks/useUploadModal";
 import { useUser } from '@/hooks/useUser';
 import useAuthModal from "@/hooks/useAuthModal";
+import { Song } from '@/types';
 
-type Props = {}
+type Props = {
+  songs: Song[]
+}
 
-export default function Library ({}: Props) {
+export default function Library ({
+  songs
+}: Props) {
   
   const { user, subscription } = useUser();
   const uploadModal = useUploadModal();
