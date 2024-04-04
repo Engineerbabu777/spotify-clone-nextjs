@@ -65,7 +65,7 @@ const UploadModal = () => {
         .from('songs')
         .upload(`song-${values.title}-${uniqueID}`, songFile, {
           cacheControl: '3600',
-          upsert: false 
+          upsert: false
         });
 
       if (songError) {
